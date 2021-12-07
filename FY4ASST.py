@@ -28,9 +28,8 @@ for f1 in datalist:
     SST=np.ma.masked_where(SST<=-5,SST)
     SST=np.ma.masked_where(SST>=45,SST)
 
-    SST=np.ma.masked_where(x<124,SST)
-    SST=np.ma.masked_where(SST>=45,SST)
     plt.figure(figsize=(12,12))
     plt.axis('off')
-    plt.imshow(SST,cmap='rainbow')
+    #plt.imshow(SST,cmap='rainbow')
+    plt.imshow(SST[300:1218, 1000:2000], cmap='rainbow')
     plt.savefig(os.path.splitext(f1)[0],dpi=300, facecolor='w', edgecolor='w', orientation='portrait')
